@@ -1,0 +1,544 @@
+{
+  "modName": "KARMA",
+  "displayName": "KARMA",
+  "minMcmVersion": 2,
+  "pluginRequirements": [
+    "KARMA.esm"
+  ],
+  "content": [
+    {
+      "text": "<p align = \"center\"><font size='45'><b>Welcome to KARMA!</b></font></p>",
+      "align": "center",
+      "type": "text",
+      "html": "true"
+    },
+    {
+      "text": "",
+      "type": "section"
+    },
+    {
+      "type": "image",
+      "libName": "KARMA",
+      "className": "Perk_ImpartialMediation"
+    },
+    {
+      "text": "",
+      "type": "section"
+    },
+    {
+      "text": "<p align = \"center\"><font size='25'><b>by bp42s</b></font></p>",
+      "align": "center",
+      "type": "text",
+      "html": "true"
+    }
+  ],
+  "pages": [
+    {
+      "pageDisplayName": "Settings",
+      "content": [
+        {
+          "text": "<font size='30'><b>SETTINGS</b></font>",
+          "type": "section"
+        },
+        {
+          "text": "In this tab, you can configure and customize different KARMA features to your liking. You can toggle any of these features on or off anytime.",
+          "align": "left",
+          "type": "text",
+          "html": "true"
+        },
+        {
+          "text": "",
+          "type": "section"
+        },
+        {
+          "text": "<font size='25'><b>KARMA MULTIPLIER</b></font>",
+          "type": "section"
+        },
+        {
+          "text": "Positive Karma Multiplier",
+          "type": "slider",
+          "help": "Adjust incoming positive karma rate. (DEFAULT = 1)",
+          "valueOptions": {
+            "min": 0,
+            "max": 10,
+            "step": 0.1,
+            "sourceType": "GlobalValue",
+            "sourceForm": "KARMA.esm|F9C"
+          }
+        },
+        {
+          "text": "Negative Karma Multiplier",
+          "type": "slider",
+          "help": "Adjust incoming negative karma rate. (DEFAULT = 1)",
+          "valueOptions": {
+            "min": 0,
+            "max": 10,
+            "step": 0.1,
+            "sourceType": "GlobalValue",
+            "sourceForm": "KARMA.esm|F9D"
+          }
+        },
+        {
+          "text": "",
+          "type": "section"
+        },
+        {
+          "text": "<font size='25'><b>KARMA NOTICES</b></font>",
+          "type": "section"
+        },
+        {
+          "text": "Enable Karma Notifications",
+          "type": "stepper",
+          "help": "Configure if you recieve notifications such as 'You've gained Karma!' (DEFAULT = ENABLED)",
+          "valueOptions": {
+            "sourceType": "GlobalValue",
+            "sourceForm": "KARMA.esm|01B",
+            "options": [
+              "DISABLED",
+              "ENABLED"
+            ]
+          }
+        },
+        {
+          "text": "Enable Karma Sounds",
+          "type": "stepper",
+          "help": "Configure if you hear sound effects when your karma changes. (DEFAULT = ENABLED)",
+          "valueOptions": {
+            "sourceType": "GlobalValue",
+            "sourceForm": "KARMA.esm|01C",
+            "options": [
+              "DISABLED",
+              "ENABLED"
+            ]
+          }
+        },
+        {
+          "text": "Karma Sound Volume",
+          "type": "slider",
+          "help": "Configure the volume that karma sound effects are played at. (DEFAULT = 1.0)",
+          "valueOptions": {
+            "min": 0.0,
+            "max": 1.0,
+            "step": 0.01,
+            "sourceType": "GlobalValue",
+            "sourceForm": "KARMA.esm|FA1"
+          }
+        },
+        {
+          "text": "Enable Vault-Boy Pop-Ups",
+          "type": "stepper",
+          "help": "Configure if you recieve Vault-Boy Pop-Ups on your HUD when your karma title changes. (Every 5 levels under level 35) (DEFAULT = ENABLED)",
+          "valueOptions": {
+            "sourceType": "GlobalValue",
+            "sourceForm": "KARMA.esm|FA4",
+            "options": [
+              "DISABLED",
+              "ENABLED"
+            ]
+          }
+        },
+        {
+          "text": "",
+          "type": "section"
+        },
+        {
+          "text": "<font size='25'><b>KARMA ALIGNMENT PERKS</b></font>",
+          "type": "section"
+        },
+        {
+          "text": "Enable Karma Alignment Perks",
+          "type": "stepper",
+          "help": "You recieve dynamic perks that can have effects, if chosen. (DEFAULT = EFFECTS)",
+          "valueOptions": {
+            "sourceType": "GlobalValue",
+            "sourceForm": "KARMA.esm|038",
+            "options": [
+              "DISABLED",
+              "EFFECTS",
+              "DISPLAY ONLY"
+            ]
+          }
+        },
+        {
+          "text": "",
+          "type": "section"
+        }
+      ]
+    },
+    {
+      "pageDisplayName": "Events",
+      "content": [
+        {
+          "text": "<font size='30'><b>EVENTS</b></font>",
+          "type": "section"
+        },
+        {
+          "text": "In this tab, you can toggle and configure different events that modify your karma level. You can toggle any of these events on or off anytime.",
+          "align": "left",
+          "type": "text",
+          "html": "true"
+        },
+        {
+          "text": "",
+          "type": "section"
+        },
+        {
+          "text": "<font size='25'><b>KARMA CHANGE EVENTS</b></font>",
+          "type": "section"
+        },
+        {
+          "text": "Karma Change - Affinity Events",
+          "type": "stepper",
+          "help": "Configure if your karma is affected by your actions, such as dialogue choices and interactions with NPCs. (DEFAULT = ENABLED. HIGHLY RECOMMENDED.)",
+          "valueOptions": {
+            "sourceType": "GlobalValue",
+            "sourceForm": "KARMA.esm|025",
+            "options": [
+              "DISABLED",
+              "ENABLED"
+            ]
+          }
+        },
+        {
+          "text": "",
+          "type": "section"
+        },
+        {
+          "text": "<font size='25'><b>KARMA GAIN EVENTS</b></font>",
+          "type": "section"
+        },
+        {
+          "text": "Karma Gain - Claim Settlement",
+          "type": "stepper",
+          "help": "Configure if you gain karma for claiming settlements. (DEFAULT = ENABLED)",
+          "valueOptions": {
+            "sourceType": "GlobalValue",
+            "sourceForm": "KARMA.esm|024",
+            "options": [
+              "DISABLED",
+              "ENABLED"
+            ]
+          }
+        },
+        {
+          "text": "Karma Gain - Clear Dungeon",
+          "type": "stepper",
+          "help": "Configure if you gain karma for clearing a dungeon. (DEFAULT = DISABLED)",
+          "valueOptions": {
+            "sourceType": "GlobalValue",
+            "sourceForm": "KARMA.esm|02F",
+            "options": [
+              "DISABLED",
+              "ENABLED"
+            ]
+          }
+        },
+        {
+          "text": "Karma Gain - Create Supply Line",
+          "type": "stepper",
+          "help": "Configure if you gain karma for connecting settlements with supply lines. (DEFAULT = ENABLED)",
+          "valueOptions": {
+            "sourceType": "GlobalValue",
+            "sourceForm": "KARMA.esm|030",
+            "options": [
+              "DISABLED",
+              "ENABLED"
+            ]
+          }
+        },
+        {
+          "text": "Karma Gain - Heal Companion",
+          "type": "stepper",
+          "help": "Configure if you gain karma for healing injured companions. (DEFAULT = ENABLED)",
+          "valueOptions": {
+            "sourceType": "GlobalValue",
+            "sourceForm": "KARMA.esm|02C",
+            "options": [
+              "DISABLED",
+              "ENABLED"
+            ]
+          }
+        },
+        {
+          "text": "",
+          "type": "section"
+        },
+        {
+          "text": "<font size='25'><b>KARMA LOSS EVENTS</b></font>",
+          "type": "section"
+        },
+        {
+          "text": "Karma Loss - Addiction",
+          "type": "stepper",
+          "help": "Configure if you lose karma for becoming addicted to a substance. (DEFAULT = ENABLED)",
+          "valueOptions": {
+            "sourceType": "GlobalValue",
+            "sourceForm": "KARMA.esm|02D",
+            "options": [
+              "DISABLED",
+              "ENABLED"
+            ]
+          }
+        },
+        {
+          "text": "Karma Loss - Assault",
+          "type": "stepper",
+          "help": "Configure if you lose karma for assaulting an NPC. (DEFAULT = ENABLED)",
+          "valueOptions": {
+            "sourceType": "GlobalValue",
+            "sourceForm": "KARMA.esm|028",
+            "options": [
+              "DISABLED",
+              "ENABLED"
+            ]
+          }
+        },
+        {
+          "text": "Karma Loss - Cannibalism",
+          "type": "stepper",
+          "help": "Configure if you lose karma for committing cannibalism. (DEFAULT = ENABLED... freak.)",
+          "valueOptions": {
+            "sourceType": "GlobalValue",
+            "sourceForm": "KARMA.esm|020",
+            "options": [
+              "DISABLED",
+              "ENABLED"
+            ]
+          }
+        },
+        {
+          "text": "Karma Loss - Consuming Alcohol",
+          "type": "stepper",
+          "help": "Configure if you lose karma for drinking alcohol. (DEFAULT = DISABLED)",
+          "valueOptions": {
+            "sourceType": "GlobalValue",
+            "sourceForm": "KARMA.esm|026",
+            "options": [
+              "DISABLED",
+              "ENABLED"
+            ]
+          }
+        },
+        {
+          "text": "Karma Loss - Consuming Chems",
+          "type": "stepper",
+          "help": "Configure if you lose karma for taking chems. (DEFAULT = DISABLED)",
+          "valueOptions": {
+            "sourceType": "GlobalValue",
+            "sourceForm": "KARMA.esm|027",
+            "options": [
+              "DISABLED",
+              "ENABLED"
+            ]
+          }
+        },
+        {
+          "text": "Karma Loss - Extortion",
+          "type": "stepper",
+          "help": "Configure if you lose karma for asking for more money from NPCs. (DEFAULT = DISABLED)",
+          "valueOptions": {
+            "sourceType": "GlobalValue",
+            "sourceForm": "KARMA.esm|02E",
+            "options": [
+              "DISABLED",
+              "ENABLED"
+            ]
+          }
+        },
+        {
+          "text": "Karma Loss - Hack Terminal",
+          "type": "stepper",
+          "help": "Configure if you lose karma for hacking an owned terminal. (DEFAULT = ENABLED)",
+          "valueOptions": {
+            "sourceType": "GlobalValue",
+            "sourceForm": "KARMA.esm|01D",
+            "options": [
+              "DISABLED",
+              "ENABLED"
+            ]
+          }
+        },
+        {
+          "text": "Karma Loss - Killing",
+          "type": "stepper",
+          "help": "Configure if you lose karma for killing NPCs. (DEFAULT = ENABLED)",
+          "valueOptions": {
+            "sourceType": "GlobalValue",
+            "sourceForm": "KARMA.esm|029",
+            "options": [
+              "DISABLED",
+              "ENABLED"
+            ]
+          }
+        },
+        {
+          "text": "Karma Loss - Picking Locks",
+          "type": "stepper",
+          "help": "Configure if you lose karma for picking owned locks. (DEFAULT = ENABLED)",
+          "valueOptions": {
+            "sourceType": "GlobalValue",
+            "sourceForm": "KARMA.esm|00C",
+            "options": [
+              "DISABLED",
+              "ENABLED"
+            ]
+          }
+        },
+        {
+          "text": "Karma Loss - Pickpocketing",
+          "type": "stepper",
+          "help": "Configure if you lose karma for picking people's pockets. (DEFAULT = ENABLED)",
+          "valueOptions": {
+            "sourceType": "GlobalValue",
+            "sourceForm": "KARMA.esm|02B",
+            "options": [
+              "DISABLED",
+              "ENABLED"
+            ]
+          }
+        },
+        {
+          "text": "Karma Loss - Theft",
+          "type": "stepper",
+          "help": "Configure if you lose karma for stealing owned items. (DEFAULT = ENABLED)",
+          "valueOptions": {
+            "sourceType": "GlobalValue",
+            "sourceForm": "KARMA.esm|02A",
+            "options": [
+              "DISABLED",
+              "ENABLED"
+            ]
+          }
+        },
+        {
+          "text": "Karma Loss - Trespassing",
+          "type": "stepper",
+          "help": "Configure if you lose karma for trespassing in restricted areas. (DEFAULT = ENABLED)",
+          "valueOptions": {
+            "sourceType": "GlobalValue",
+            "sourceForm": "KARMA.esm|01E",
+            "options": [
+              "DISABLED",
+              "ENABLED"
+            ]
+          }
+        },
+        {
+          "text": "",
+          "type": "section"
+        },
+        {
+          "text": "<font size='25'><b>FACTION EVENTS</b></font>",
+          "type": "section"
+        },
+        {
+          "text": "Quest Completion - Brotherhood",
+          "type": "stepper",
+          "help": "Configure what kind of karma you receive for completing Brotherhood quests, if any at all. (DEFAULT = GAIN)",
+          "valueOptions": {
+            "sourceType": "GlobalValue",
+            "sourceForm": "KARMA.esm|022",
+            "options": [
+              "NONE",
+              "KARMA GAIN",
+              "KARMA LOSS"
+            ]
+          }
+        },
+        {
+          "text": "Quest Completion - Institute",
+          "type": "stepper",
+          "help": "Configure what kind of karma you receive for completing Institute quests, if any at all. (DEFAULT = LOSS)",
+          "valueOptions": {
+            "sourceType": "GlobalValue",
+            "sourceForm": "KARMA.esm|023",
+            "options": [
+              "NONE",
+              "KARMA GAIN",
+              "KARMA LOSS"
+            ]
+          }
+        },
+        {
+          "text": "Quest Completion - Railroad",
+          "type": "stepper",
+          "help": "Configure what kind of karma you receive for completing Railroad quests, if any at all. (DEFAULT = GAIN)",
+          "valueOptions": {
+            "sourceType": "GlobalValue",
+            "sourceForm": "KARMA.esm|FA3",
+            "options": [
+              "NONE",
+              "KARMA GAIN",
+              "KARMA LOSS"
+            ]
+          }
+        },
+        {
+          "text": "Quest Completion - Minutemen",
+          "type": "stepper",
+          "help": "Configure what kind of karma you receive for completing Minutemen quests, if any at all. (DEFAULT = GAIN)",
+          "valueOptions": {
+            "sourceType": "GlobalValue",
+            "sourceForm": "KARMA.esm|021",
+            "options": [
+              "NONE",
+              "KARMA GAIN",
+              "KARMA LOSS"
+            ]
+          }
+        },
+        {
+          "text": "",
+          "type": "section"
+        }
+      ]
+    },
+    {
+      "pageDisplayName": "Debug",
+      "content": [
+        {
+          "text": "<font size='30'><b>DEBUG</b></font>",
+          "type": "section"
+        },
+        {
+          "text": "In this tab, you can debug and restart KARMA features as needed.",
+          "align": "left",
+          "type": "text",
+          "html": "true"
+        },
+        {
+          "text": "",
+          "type": "section"
+        },
+        {
+          "text": "Refresh Karma",
+          "type": "button",
+          "help": "Refreshes karma and related values.",
+          "action": {
+            "type": "CallFunction",
+            "form": "KARMA.esm|F9A",
+            "scriptName": "karmaLib",
+            "function": "runOperations",
+            "params": []
+          }
+        },
+        {
+          "text": "Update Karma Perks",
+          "type": "button",
+          "help": "Refreshes karma perks, and instantly removes karma perks if you have disabled the feature in MCM.",
+          "action": {
+            "type": "CallFunction",
+            "form": "KARMA.esm|F9A",
+            "scriptName": "karmaLib",
+            "function": "updateKarmaPerks",
+            "params": []
+          }
+        },
+        {
+          "text": "",
+          "type": "section"
+        }
+      ]
+    }
+  ]
+}
